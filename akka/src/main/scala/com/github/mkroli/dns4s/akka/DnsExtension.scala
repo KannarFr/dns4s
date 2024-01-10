@@ -46,5 +46,5 @@ object Dns extends ExtensionId[DnsExtension] with ExtensionIdProvider {
 }
 
 class DnsExtension(system: ExtendedActorSystem) extends Extension {
-  override val manager = system.actorOf(Props[DnsExtensionActor](), "dns4s")
+  override val manager = system.systemActorOf(Props[DnsExtensionActor](), "dns4s")
 }
